@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div align="center" class="mt-4 p-5 bg-light">
+            <h2>Welcome to the page for {{ current_user.username }}</h2>
+            <img align="center" src="{{ url_for('static', filename='profile_pics/'+current_user.profile_image) }}">
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.email.label(class="form-group") }} 
+                {{ form.email(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.username.label(class="form-group") }} 
+                {{ form.username(class="form-control") }}
+            </div>
+            
+            <div class="form-group">
+                {{ form.picture.label(class="form-group") }} 
+                {{ form.picture(class="form-control") }}
+            </div>
+
+            <br>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

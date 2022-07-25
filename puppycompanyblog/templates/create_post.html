@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="mt-4 p-5 bg-light">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+
+                <div class="form-group">
+                    {{ form.title.label(class="form-group-label") }} 
+                    {{ form.title(class="form-control") }} 
+                </div>
+
+                <div class="form-group">
+                    {{ form.text.label(class="form-group-label") }} 
+                    {{ form.text(class="form-control") }} 
+                </div>
+                <br>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }} 
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
